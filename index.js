@@ -28,6 +28,12 @@ app.get('/', (req, res) => {
     res.send("Hello HOMEPAGE!")
 })
 
+// The only way this middlware runs is if a route handler function runs the "next()" function
+app.use((req, res) => {
+    res.status(404);
+    res.json({ error: 'Resource Not Found' });
+  });
+
 // Server actively listeing on port 3000
 app.listen(PORT, (req, res) => {
     console.log(`Server listening on port: ${PORT}`)
