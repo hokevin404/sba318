@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// MIDDLEWARE----------------------------------------------------------------------------
 // Body parser middleware
 // Middleware to parse data within routes
 // parsed data located in "req.body"
@@ -23,12 +24,15 @@ app.use((req, res, next) => {
     }
     next();
 });
+//---------------------------------------------------------------------------------------
 
+//
 app.get('/', (req, res) => {
     res.send("Hello HOMEPAGE!")
 })
 
-// The only way this middlware runs is if a route handler function runs the "next()" function
+// The only way this middlware runs is if a route handler 
+// function runs the "next()" function
 app.use((req, res) => {
     res.status(404);
     res.json({ error: 'Resource Not Found' });
