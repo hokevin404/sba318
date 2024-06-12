@@ -35,6 +35,16 @@ app.get('/api/users', (req, res) => {
     res.json(users);
 });
 
+// GET route to get user by id
+app.get('/api/users/:id', (req, res) => {
+    const user = users.find((u) => 
+        u.id == req.params.id
+    );
+
+    if(user)
+        res.json(user);
+});
+
 // GET route for default root
 app.get('/', (req, res) => {
     res.send("Hello HOMEPAGE!")
