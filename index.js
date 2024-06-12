@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Import files from data directory
+const users = require('./data/users.js');
+const posts = require('./data/posts.js');
+
 // MIDDLEWARE----------------------------------------------------------------------------
 // Body parser middleware
 // Middleware to parse data within routes
@@ -26,7 +30,12 @@ app.use((req, res, next) => {
 });
 //---------------------------------------------------------------------------------------
 
-//
+// GET route to get all user data
+app.get('/api/users', (req, res) => {
+    res.json(users);
+});
+
+// GET route for default root
 app.get('/', (req, res) => {
     res.send("Hello HOMEPAGE!")
 })

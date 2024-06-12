@@ -72,7 +72,7 @@ const posts = [
         title: "Apocalypse: Follow Us - SuA",
         price: 7,
         condition: "New",
-        description: "Official Dreamcatcher Apocalypse: Follow Us photocard of Sua."
+        description: "Official Dreamcatcher Apocalypse: Follow Us photocard of SuA."
     }
 ];
 
