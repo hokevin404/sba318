@@ -75,3 +75,5 @@ const posts = [
         description: "Official Dreamcatcher Apocalypse: Follow Us photocard of Sua."
     }
 ];
+
+module.exports = posts;
