@@ -30,4 +30,15 @@ router
             next(error(400, "Insufficient data"));
     });
 
+router
+    .route("/:id")
+    .get((req, res, next) => {
+        const user = users.find((user) => user.id == req.params.id);
+
+        if(user)
+            res.json(user);
+        else
+            next();
+    })
+
 module.exports = router;
