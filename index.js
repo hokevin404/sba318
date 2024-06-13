@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3000;
 // Import files from data directory
 const users = require('./data/users.js');
 const posts = require('./data/posts.js');
+const reviews = require('./data/reviews.js');
 
 // MIDDLEWARE----------------------------------------------------------------------------
 // Body parser middleware
