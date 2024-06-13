@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+//Import files from routes directory
+const usersRoute = require("./routes/users.js");
+
 // Import files from data directory
 const users = require('./data/users.js');
 const posts = require('./data/posts.js');
@@ -31,20 +34,23 @@ app.use((req, res, next) => {
 });
 //---------------------------------------------------------------------------------------
 
+// API routes
+app.use("/api/users", usersRoute);
+
 // GET route to get all user data
-app.get('/api/users', (req, res) => {
-    res.json(users);
-});
+// app.get('/api/users', (req, res) => {
+//     res.json(users);
+// });
 
-// GET route to get user by id
-app.get('/api/users/:id', (req, res) => {
-    const user = users.find((u) => 
-        u.id == req.params.id
-    );
+// // GET route to get user by id
+// app.get('/api/users/:id', (req, res) => {
+//     const user = users.find((u) => 
+//         u.id == req.params.id
+//     );
 
-    if(user)
-        res.json(user);
-});
+//     if(user)
+//         res.json(user);
+// });
 
 // GET route for default root
 app.get('/', (req, res) => {
