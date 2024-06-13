@@ -15,7 +15,7 @@ const posts = [
         userID: 1,
         title: "Raid of Dream: Clear - YooHyeon",
         price: 7,
-        condition: "New",
+        condition: "Like-New",
         description: "Official Dreamcatcher Raid of Dreams photocard of YooHyeon."
     },
     {
@@ -31,7 +31,7 @@ const posts = [
         userID: 1,
         title: "Raid of Dream: Clear - SiYeon",
         price: 7,
-        condition: "New",
+        condition: "Used",
         description: "Official Dreamcatcher Raid of Dreams photocard of SiYeon."
     },
     {
@@ -47,7 +47,7 @@ const posts = [
         userID: 2,
         title: "VersuS VillainS: Limited - DaMi",
         price: 10,
-        condition: "New",
+        condition: "Used",
         description: "Official Dreamcatcher VersuS VillainS photocard of DaMi."
     },
     {
@@ -63,7 +63,7 @@ const posts = [
         userID: 3,
         title: "VersuS VillainS: Limited - SiYeon",
         price: 10,
-        condition: "New",
+        condition: "Like-New",
         description: "Official Dreamcatcher VersuS VillainS photocard of SiYeon."
     },
     {
