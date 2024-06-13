@@ -15,6 +15,17 @@ router
                 next(error(409, "Username already exists"))
             if(users.find((user) => user.email == req.body.email))
                 next(error(409, "Email already exists"))
+
+            const user = {
+                id: users.length + 1,
+                first_name: req.body.first_name,
+                last_name: req.body.last_name,
+                username: req.body.username,
+                email: req.body.email
+            }
+
+            users.push(user);
+            res.json(users[users.length - 1]);
         } else
             next(error(400, "Insufficient data"));
     });
