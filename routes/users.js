@@ -40,5 +40,20 @@ router
         else
             next();
     })
+    .patch((req, res, next) => {
+        const user = users.find((user, i) => {
+            if(user.id == req.params.id) {
+                for(const key in req.body)
+                    users[i][key] = req.body[key];
+                
+                return true;
+            }
+        })
+
+        if(user)
+            res.json(user);
+        else
+            next();
+    });
 
 module.exports = router;
