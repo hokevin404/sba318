@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3000;
 //Import files from routes directory
 const usersRoute = require("./routes/users.js");
 const postsRoute = require("./routes/posts.js");
+const reviewsRoute = require("./routes/reviews.js");
 
 // Import files from data directory
 const users = require('./data/users.js');
@@ -38,6 +39,7 @@ app.use((req, res, next) => {
 // API routes
 app.use("/api/users", usersRoute);
 app.use("/api/posts", postsRoute);
+app.use("/api/reviews", reviewsRoute);
 
 // GET route to get all user data
 // app.get('/api/users', (req, res) => {
