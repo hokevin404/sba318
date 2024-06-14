@@ -26,6 +26,7 @@ router
             next(error(400, "Insufficient data"));
     });
 
+
 router
     .route("/:id")
     .get((req, res) => {
@@ -36,7 +37,7 @@ router
         else
             next();
     })
-    .post((req, res) => {
+    .patch((req, res) => {
         const post = posts.find((post, i) => {
             if(post.id == req.params.id) {
                 for(const key in req.body)
