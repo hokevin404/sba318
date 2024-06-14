@@ -57,10 +57,10 @@ router
     })
     .delete((req, res, next) => {
         const user = users.find((user, i) => {
-            if(user.id == req.params.id)
+            if(user.id == req.params.id) {
                 users.splice(i, 1);
-
-            return true;
+                return true;
+            }
         })
 
         if(user)

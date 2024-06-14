@@ -26,4 +26,43 @@ router
             next(error(400, "Insufficient data"));
     });
 
+router
+    .route("/:id")
+    .get((req, res) => {
+        const post = posts.find((post) => post.id == req.params.id);
+        
+        if(post)
+            res.json(post);
+        else
+            next();
+    })
+    .post((req, res) => {
+        const post = posts.find((post, i) => {
+            if(post.id == req.params.id) {
+                for(const key in req.body)
+                    posts[i][key] = req.body[key];
+
+                return true;
+            }
+        })
+
+        if(post)
+            res.json(post);
+        else
+            next();
+    })
+    .delete((req, res, next) => {
+        const post = posts.find((post, i) => {
+            if(post.id  == req.params.id) {
+                posts.splice(i, 1);
+                return true;
+            }
+        })
+
+        if(post)
+            res.json(post);
+        else
+            next();
+    });
+
 module.exports = router;
