@@ -1,5 +1,5 @@
 // The "posts" data will include information about
-// item posts that the users make.
+// item listings that the users make.
 
 const posts = [
     {

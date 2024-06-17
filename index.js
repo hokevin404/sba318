@@ -1,3 +1,4 @@
+// Import and initialize module
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -40,22 +41,6 @@ app.use((req, res, next) => {
 app.use("/api/users", usersRoute);
 app.use("/api/posts", postsRoute);
 app.use("/api/reviews", reviewsRoute);
-
-// GET route to get all user data
-// app.get('/api/users', (req, res) => {
-//     res.json(users);
-// });
-
-// // GET route to get user by id
-// app.get('/api/users/:id', (req, res) => {
-//     const user = users.find((u) => 
-//         u.id == req.params.id
-//     );
-
-//     if(user)
-//         res.json(user);
-// });
-
 // GET route for default root
 app.get('/', (req, res) => {
     res.send("Hello HOMEPAGE!")
